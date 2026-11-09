@@ -1,0 +1,10 @@
+{
+  "id": "transparent",
+  "name": "Transparent",
+  "version": "0.2.0",
+  "minAppVersion": "1.5.0",
+  "description": "Windows 11 acrylic / mica translucency for the Obsidian window.",
+  "author": "JayFr2",
+  "authorUrl": "https://github.com/JayFr2",
+  "isDesktopOnly": true
+}

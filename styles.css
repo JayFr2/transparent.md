@@ -1,0 +1,33 @@
+/* Transparent: let the native backdrop show through the app's outer layers.
+   Themes / snippets can target body.transparent-on (or body.is-translucent)
+   to make their own pane backgrounds semi-transparent. */
+
+body.transparent-on {
+  --transparent-tint: 0.35;
+  background: transparent !important;
+}
+
+/* The tint slider. Extra specificity so it wins over theme/snippet
+   translucency rules for the outer layer. */
+body.transparent-on.is-translucent:not(.is-fullscreen) .app-container,
+body.transparent-on.is-translucent:not(.is-fullscreen) .horizontal-main-container,
+body.transparent-on.is-translucent:not(.is-fullscreen) .workspace {
+  background-color: rgba(17, 17, 27, var(--transparent-tint)) !important;
+}
+
+body.transparent-on .titlebar,
+body.transparent-on .workspace-ribbon,
+body.transparent-on .workspace-split.mod-left-split,
+body.transparent-on .workspace-split.mod-right-split {
+  background-color: transparent !important;
+}
+
+/* Default theme: semi-transparent panes so there's something to see */
+body.transparent-on.theme-dark {
+  --background-primary: rgba(30, 30, 30, 0.75);
+  --background-secondary: rgba(38, 38, 38, 0.6);
+}
+body.transparent-on.theme-light {
+  --background-primary: rgba(255, 255, 255, 0.75);
+  --background-secondary: rgba(246, 246, 246, 0.6);
+}
